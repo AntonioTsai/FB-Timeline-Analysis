@@ -1,0 +1,3 @@
+// Client Information
+exports.id = 'APP_ID';
+exports.secret = 'APP_SECRET';

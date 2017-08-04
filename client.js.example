@@ -1,3 +1,6 @@
 // Client Information
 exports.id = 'APP_ID';
 exports.secret = 'APP_SECRET';
+// Get this access token from FB Graph API Explorer
+// Remember to select needed permissions
+exports.graph_api_explorer_token = 'GRAPH_API_ACCESS_TOKEN';

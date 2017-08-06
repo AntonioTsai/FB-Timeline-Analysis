@@ -1,2 +1,4 @@
 node_modules/
 client.js
+*.json
+!package.json

@@ -1,27 +1,18 @@
 const config = require('./config');
 var { FB, FacebookApiException } = require('fb');
 
-exports.getFeed = () => new Promise(resolve => {
+exports.getFeed = () => new Promise((resolve, reject) => {
     FB.api('me/feed', {
         access_token: config.graph_api_explorer_token,
         limit: config.posts,
         since: config.startDate
     }, (res) => {
         if (!res || res.error) {
-            console.log(!res ? 'error occurred' : res.error);
-            return;
-        }
-
-        // TODO move this part to index.js
-        if (res.data.length != 0) {
-            // Json to string
-            data_stringify = JSON.stringify(res.data);
-            // Save posts to post_list.json
-            fs.writeFile('post_list.json', data_stringify, err => {
-                if (err) {
-                    console.log(err);
-                }
-            });
+            reject(!res ? 'Unknown error occurred!' : res.error);
+        } else if (res.data.length == 0) {
+            reject('No post recieved!');
+        } else {
+            resolve(res.data);
         }
     });
 });

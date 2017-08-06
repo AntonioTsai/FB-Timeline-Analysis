@@ -2,7 +2,7 @@ const config = require('./config');
 var { FB, FacebookApiException } = require('fb');
 
 // Get the feed of the user
-exports.getFeed = () => new Promise((resolve, reject) => {
+exports.get_feed = () => new Promise((resolve, reject) => {
     FB.api('me/feed', {
         access_token: config.graph_api_explorer_token,
         limit: config.posts,

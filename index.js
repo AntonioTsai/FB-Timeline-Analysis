@@ -19,7 +19,7 @@ const check_post_list = async () => {
             'Request data from Facebook...');
 
         try {   // Get feed
-            posts = await graph.getFeed();
+            posts = await graph.get_feed();
 
             // Store posts to post_list.json
             data_stringify = JSON.stringify(posts);

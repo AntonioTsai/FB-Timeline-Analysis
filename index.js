@@ -1,10 +1,10 @@
 const fs = require('fs');
-const client = require('./client');
+const config = require('./config');
 var { FB, FacebookApiException } = require('fb');
 var startDate = '2017-01-01';
 
 FB.api('me/feed', {
-    access_token: client.graph_api_explorer_token,
+    access_token: config.graph_api_explorer_token,
     limit: 100,
     since: startDate
 }, (res) => {

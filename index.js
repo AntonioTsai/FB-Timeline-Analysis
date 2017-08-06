@@ -7,7 +7,7 @@ console.log('Please make sure "graph_api_explorer_token" has been updated!');
 
 // Check is there any data in `post_list.json`
 const check_post_list = async () => {
-    // Todo Read JSON file `post_list.json`
+    // TODO Read JSON file `post_list.json`
     if(fs.exists('./post_list.json')) {
         var posts = require('./post_list.json');
     } else {
@@ -40,7 +40,7 @@ const check_post_list = async () => {
 
 check_post_list()
 
-// Ask the user whether to update `post_list.json` or not
+// TODO Ask the user whether to update `post_list.json` or not
 //  YES => Update
 //  NO => Get Feeds
 

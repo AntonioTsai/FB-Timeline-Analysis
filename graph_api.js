@@ -2,11 +2,10 @@ const config = require('./config');
 var { FB, FacebookApiException } = require('fb');
 
 exports.getFeed = () => new Promise(resolve => {
-    // TODO move limit, since(startDate) to parameter
     FB.api('me/feed', {
         access_token: config.graph_api_explorer_token,
-        limit: 100,
-        since: startDate
+        limit: config.posts,
+        since: config.startDate
     }, (res) => {
         if (!res || res.error) {
             console.log(!res ? 'error occurred' : res.error);

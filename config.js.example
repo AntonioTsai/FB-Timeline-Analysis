@@ -4,3 +4,5 @@ exports.secret = 'APP_SECRET';
 // Get this access token from FB Graph API Explorer
 // Remember to select needed permissions
 exports.graph_api_explorer_token = 'GRAPH_API_ACCESS_TOKEN';
+exports.startDate = 'THE_EARLIEST_DATE_OF_POSTS';
+exports.posts = 'MAX_NUMBER_OF_POSTS';
